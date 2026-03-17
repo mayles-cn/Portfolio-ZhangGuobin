@@ -1,0 +1,7 @@
+D:/AAA/QODER/FolderVisualizer2/build/CMakeFiles/FolderVisualizer.dir
+D:/AAA/QODER/FolderVisualizer2/build/CMakeFiles/edit_cache.dir
+D:/AAA/QODER/FolderVisualizer2/build/CMakeFiles/rebuild_cache.dir
+D:/AAA/QODER/FolderVisualizer2/build/CMakeFiles/list_install_components.dir
+D:/AAA/QODER/FolderVisualizer2/build/CMakeFiles/install.dir
+D:/AAA/QODER/FolderVisualizer2/build/CMakeFiles/install/local.dir
+D:/AAA/QODER/FolderVisualizer2/build/CMakeFiles/install/strip.dir

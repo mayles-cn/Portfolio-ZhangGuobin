@@ -1,0 +1,32 @@
+[
+{
+  "directory": "D:/AAA/QODER/FolderVisualizer2/build",
+  "command": "D:\\Cjiajia\\mingw\\ucrt64\\bin\\g++.exe -DUNICODE -D_UNICODE -D_WIN32_WINNT=0x0601 @CMakeFiles/FolderVisualizer.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\FolderVisualizer.dir\\FolderVisualizerGUI.cpp.obj -c D:\\AAA\\QODER\\FolderVisualizer2\\FolderVisualizerGUI.cpp",
+  "file": "D:/AAA/QODER/FolderVisualizer2/FolderVisualizerGUI.cpp",
+  "output": "CMakeFiles/FolderVisualizer.dir/FolderVisualizerGUI.cpp.obj"
+},
+{
+  "directory": "D:/AAA/QODER/FolderVisualizer2/build",
+  "command": "D:\\Cjiajia\\mingw\\ucrt64\\bin\\g++.exe -DUNICODE -D_UNICODE -D_WIN32_WINNT=0x0601 @CMakeFiles/FolderVisualizer.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\FolderVisualizer.dir\\FileTree.cpp.obj -c D:\\AAA\\QODER\\FolderVisualizer2\\FileTree.cpp",
+  "file": "D:/AAA/QODER/FolderVisualizer2/FileTree.cpp",
+  "output": "CMakeFiles/FolderVisualizer.dir/FileTree.cpp.obj"
+},
+{
+  "directory": "D:/AAA/QODER/FolderVisualizer2/build",
+  "command": "D:\\Cjiajia\\mingw\\ucrt64\\bin\\g++.exe -DUNICODE -D_UNICODE -D_WIN32_WINNT=0x0601 @CMakeFiles/FolderVisualizer.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\FolderVisualizer.dir\\TreeNode.cpp.obj -c D:\\AAA\\QODER\\FolderVisualizer2\\TreeNode.cpp",
+  "file": "D:/AAA/QODER/FolderVisualizer2/TreeNode.cpp",
+  "output": "CMakeFiles/FolderVisualizer.dir/TreeNode.cpp.obj"
+},
+{
+  "directory": "D:/AAA/QODER/FolderVisualizer2/build",
+  "command": "D:\\Cjiajia\\mingw\\ucrt64\\bin\\g++.exe -DUNICODE -D_UNICODE -D_WIN32_WINNT=0x0601 @CMakeFiles/FolderVisualizer.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\FolderVisualizer.dir\\IconManager.cpp.obj -c D:\\AAA\\QODER\\FolderVisualizer2\\IconManager.cpp",
+  "file": "D:/AAA/QODER/FolderVisualizer2/IconManager.cpp",
+  "output": "CMakeFiles/FolderVisualizer.dir/IconManager.cpp.obj"
+},
+{
+  "directory": "D:/AAA/QODER/FolderVisualizer2/build",
+  "command": "D:\\Cjiajia\\mingw\\ucrt64\\bin\\g++.exe -DUNICODE -D_UNICODE -D_WIN32_WINNT=0x0601 @CMakeFiles/FolderVisualizer.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\FolderVisualizer.dir\\FileTypeManager.cpp.obj -c D:\\AAA\\QODER\\FolderVisualizer2\\FileTypeManager.cpp",
+  "file": "D:/AAA/QODER/FolderVisualizer2/FileTypeManager.cpp",
+  "output": "CMakeFiles/FolderVisualizer.dir/FileTypeManager.cpp.obj"
+}
+]
