@@ -1,0 +1,41 @@
+# Build outputs
+/build/
+/build*/
+/release/
+/out/
+/dist/
+
+# CMake
+/CMakeUserPresets.json
+/compile_commands.json
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CMakeFiles/
+
+# IDE / editor
+/.vs/
+/.vscode/
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+
+# Windows binaries and debug artifacts
+*.exe
+*.dll
+*.lib
+*.exp
+*.obj
+*.pdb
+*.ilk
+*.manifest
+*.rc.obj
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+*.cache
+Thumbs.db
+Desktop.ini

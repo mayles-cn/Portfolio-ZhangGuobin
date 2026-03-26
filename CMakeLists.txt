@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.21)
 project(FolderVisualizer VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -13,30 +13,26 @@ if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
 endif()
 
-set(APP_SOURCES
-    FolderVisualizerGUI.cpp
-    FileTree.cpp
-    TreeNode.cpp
-    IconManager.cpp
-    FileTypeManager.cpp
-)
-
-set(APP_HEADERS
-    FileTree.h
-    TreeNode.h
-    IconManager.h
-    FileTypeManager.h
-)
+set(FOLDER_VISUALIZER_TARGET ${PROJECT_NAME})
 
 if(WIN32)
-    add_executable(${PROJECT_NAME} WIN32 ${APP_SOURCES} ${APP_HEADERS} resource.rc)
+    add_executable(${FOLDER_VISUALIZER_TARGET} WIN32)
 else()
-    add_executable(${PROJECT_NAME} ${APP_SOURCES} ${APP_HEADERS})
+    add_executable(${FOLDER_VISUALIZER_TARGET})
 endif()
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+add_subdirectory(src)
 
-target_compile_definitions(${PROJECT_NAME} PRIVATE
+if(WIN32)
+    add_subdirectory(resources/windows)
+endif()
+
+target_include_directories(${FOLDER_VISUALIZER_TARGET} PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/src"
+    "${CMAKE_CURRENT_SOURCE_DIR}/resources/windows"
+)
+
+target_compile_definitions(${FOLDER_VISUALIZER_TARGET} PRIVATE
     UNICODE
     _UNICODE
     _WIN32_WINNT=0x0601
@@ -44,11 +40,11 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
 )
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
+    target_compile_options(${FOLDER_VISUALIZER_TARGET} PRIVATE -Wall -Wextra)
 endif()
 
 if(WIN32)
-    target_link_libraries(${PROJECT_NAME} PRIVATE gdiplus comctl32 shell32 ole32 uuid)
+    target_link_libraries(${FOLDER_VISUALIZER_TARGET} PRIVATE gdiplus comctl32 shell32 ole32 uuid)
 endif()
 
 set(RELEASE_DIR "${CMAKE_SOURCE_DIR}/release")
@@ -60,26 +56,23 @@ foreach(cfg IN ITEMS Debug Release RelWithDebInfo MinSizeRel)
 endforeach()
 
 set(ASSETS_DIR "${CMAKE_SOURCE_DIR}/assets")
-if(EXISTS "${ASSETS_DIR}/settings.json")
-    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "${ASSETS_DIR}/settings.json"
-            "${RELEASE_DIR}/settings.json"
-        COMMENT "Copy settings.json to release/"
-    )
-endif()
 
-if(EXISTS "${ASSETS_DIR}/tree.ico")
-    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "${ASSETS_DIR}/tree.ico"
-            "${RELEASE_DIR}/tree.ico"
-        COMMENT "Copy tree.ico to release/"
-    )
-endif()
+function(copy_runtime_file source_file destination_name)
+    if(EXISTS "${source_file}")
+        add_custom_command(TARGET ${FOLDER_VISUALIZER_TARGET} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${source_file}"
+                "${RELEASE_DIR}/${destination_name}"
+            COMMENT "Copy ${destination_name} to release/"
+        )
+    endif()
+endfunction()
+
+copy_runtime_file("${ASSETS_DIR}/settings.json" "settings.json")
+copy_runtime_file("${ASSETS_DIR}/tree.ico" "tree.ico")
 
 if(EXISTS "${ASSETS_DIR}/icons")
-    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    add_custom_command(TARGET ${FOLDER_VISUALIZER_TARGET} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
             "${ASSETS_DIR}/icons"
             "${RELEASE_DIR}/icons"

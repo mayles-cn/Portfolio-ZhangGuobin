@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\FolderVisualizer.dir/objects.a
-D:\cccccc\MinGW\bin\ar.exe qc CMakeFiles\FolderVisualizer.dir/objects.a @CMakeFiles\FolderVisualizer.dir\objects1.rsp
-D:\cccccc\MinGW\bin\g++.exe -O3 -DNDEBUG -mwindows -Wl,--whole-archive CMakeFiles\FolderVisualizer.dir/objects.a -Wl,--no-whole-archive -o FolderVisualizer.exe -Wl,--out-implib,libFolderVisualizer.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\FolderVisualizer.dir\linkLibs.rsp

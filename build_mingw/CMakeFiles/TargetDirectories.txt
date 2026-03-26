@@ -1,3 +1,0 @@
-D:/AAA/QODER/FolderVisualizer/build_mingw/CMakeFiles/FolderVisualizer.dir
-D:/AAA/QODER/FolderVisualizer/build_mingw/CMakeFiles/edit_cache.dir
-D:/AAA/QODER/FolderVisualizer/build_mingw/CMakeFiles/rebuild_cache.dir
