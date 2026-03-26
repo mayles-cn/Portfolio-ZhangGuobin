@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/AAA/QODER/FolderVisualizer/resource.h
+
+D:/AAA/QODER/FolderVisualizer/resource.rc
+windows.h
+-
+resource.h
+D:/AAA/QODER/FolderVisualizer/resource.h
+

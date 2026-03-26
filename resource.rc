@@ -1,0 +1,38 @@
+// 应用程序图标资源
+// 将 tree.ico 嵌入到可执行文件中
+
+#include <windows.h>
+#include "resource.h"
+
+// 主程序图标（应用程序图标）
+IDI_APP_ICON ICON "assets/tree.ico"
+
+// 版本信息（可选）
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       0
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404E8"
+        BEGIN
+            VALUE "CompanyName",      "FolderVisualizer"
+            VALUE "FileDescription",  "文件夹可视化工具"
+            VALUE "FileVersion",      "1.0.0.0"
+            VALUE "InternalName",     "FolderVisualizer"
+            VALUE "LegalCopyright",   "Copyright (C)"
+            VALUE "OriginalFilename", "FolderVisualizer.exe"
+            VALUE "ProductName",      "Folder Visualizer"
+            VALUE "ProductVersion",   "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1252
+    END
+END
